@@ -12,29 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity
-            android:name=".MyScrollingActivity"
-            android:label="@string/title_activity_my_scrolling"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".TestActivity">
-        </activity>
-        <activity android:name=".PullActivity">
-        </activity>
-        <activity android:name=".LayoutActivity">
-        </activity>
-        <activity android:name=".PdfActivity">
-        </activity>
-        <activity android:name=".view.NavigationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".view.ToolbarActivity">
-        </activity>
     </application>
 
 </manifest>

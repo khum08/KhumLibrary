@@ -1,4 +1,4 @@
-package com.example.khum.demo0223;
+package com.example.libexample.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,12 +12,12 @@ public class PdfActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf);
+        setContentView(com.example.khum.demo0223.R.layout.activity_pdf);
         initView();
     }
 
     private void initView() {
-        PDFView pdfView = (PDFView)findViewById(R.id.pdfView);
+        PDFView pdfView = (PDFView)findViewById(com.example.khum.demo0223.R.id.pdfView);
         String pdfPath = "http://192.168.0.15:84/files/contract_pdf/2018-03-15/2018-03-15-17-13-20-5aaa3930538e6.pdf";
         pdfView.fromUri(Uri.parse(pdfPath)).load();
     }

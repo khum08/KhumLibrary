@@ -1,4 +1,4 @@
-package com.example.khum.demo0223.view;
+package com.example.libexample.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
