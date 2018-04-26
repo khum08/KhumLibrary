@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KhumLibrary.iml" filepath="$PROJECT_DIR$/KhumLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/khumLib/khumLib.iml" filepath="$PROJECT_DIR$/khumLib/khumLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libexample/libexample.iml" filepath="$PROJECT_DIR$/libexample/libexample.iml" />
     </modules>
   </component>
 </project>

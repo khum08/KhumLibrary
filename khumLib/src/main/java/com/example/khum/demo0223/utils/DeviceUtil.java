@@ -13,7 +13,7 @@ import android.view.WindowManager;
  */
 public class DeviceUtil {
 
-    public void get(Context context){
+    public static void get(Context context){
         DisplayMetrics dm = new DisplayMetrics();
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(dm);

@@ -1,9 +1,8 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.khum.demo0223"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -30,6 +29,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.mcxiaoke.volley:library:1.0.19'
-    compile 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    compile ('com.mcxiaoke.volley:library:1.0.19')
+    compile ('com.github.barteksc:android-pdf-viewer:2.8.2') {
+        exclude module: 'support-v4'
+    }
 }
