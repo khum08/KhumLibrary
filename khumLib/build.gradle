@@ -19,8 +19,10 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
-}
 
+}
+def support_version = "25.0.0"
+def kotlin_version = "1.2.0"
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api 'com.android.support:appcompat-v7:26.1.0'
@@ -29,8 +31,17 @@ dependencies {
     testApi 'junit:junit:4.12'
     androidTestApi 'com.android.support.test:runner:1.0.1'
     androidTestApi 'com.android.support.test.espresso:espresso-core:3.0.1'
-    api ('com.mcxiaoke.volley:library:1.0.19')
-    api ('com.github.barteksc:android-pdf-viewer:2.8.2') {
-        exclude module: 'support-v4'
-    }
+    api "com.squareup.retrofit2:retrofit:2.2.0"
+    api "com.squareup.retrofit2:converter-gson:2.2.0"
+    api "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+    api "io.reactivex.rxjava2:rxjava:2.1.2"
+    api "io.reactivex.rxjava2:rxandroid:2.0.1"
+    api "com.android.support:recyclerview-v7:$support_version"
+    api "com.google.dagger:dagger:2.4"
+    api "com.github.bumptech.glide:glide:3.7.0"
+    api "com.baidu.mobstat:mtj-sdk:latest.integration"
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.4"
 }
+
+

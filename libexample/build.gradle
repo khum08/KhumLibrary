@@ -12,6 +12,22 @@ android {
     }
     buildTypes {
         release {
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+            buildConfigField "String", "TMS_HOST", "\"http://trade.efunong.com:81/\""
+            buildConfigField "String", "TMS_APP_ID", "\"51513303662\""
+            buildConfigField "String", "TMS_APP_SECRET", "\"5F6FF9A8DA2EED4076DE276DB67604CD\""
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+            buildConfigField "String", "TMS_HOST", "\"http://trade.efunong.com:81/\""
+            buildConfigField "String", "TMS_APP_ID", "\"51513303662\""
+            buildConfigField "String", "TMS_APP_SECRET", "\"5F6FF9A8DA2EED4076DE276DB67604CD\""
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
