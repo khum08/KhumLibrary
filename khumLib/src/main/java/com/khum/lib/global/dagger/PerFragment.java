@@ -11,7 +11,7 @@ import javax.inject.Scope;
  * <pre>
  *     author : khum
  *     time   : 2018/5/9
- *     desc   :
+ *     desc   : fragment使用
  * </pre>
  */
 @Scope

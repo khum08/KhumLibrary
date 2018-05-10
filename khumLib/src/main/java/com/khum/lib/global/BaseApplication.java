@@ -15,6 +15,9 @@ import com.khum.lib.utils.DeviceUtil;
  *     author : khum
  *     time   : 2018/4/26
  *     desc   : 维护设备信息
+ *              子类应当重写:
+ *                  initAppInfo()
+ *                  setIsDebug()
  * </pre>
  */
 public class BaseApplication extends Application {
@@ -30,6 +33,7 @@ public class BaseApplication extends Application {
     public static String appVersion;
     //用于提供全局的Context对象
     public static ContextComponent mContextComponent;
+    public static boolean isDebug;
 
     //此方法在onCreate()前调用
     @Override
@@ -43,6 +47,7 @@ public class BaseApplication extends Application {
         super.onCreate();
         initAppInfo();
         mContextComponent = DaggerContextComponent.builder().contextModule(new ContextModule(this)).build();
+        isDebug = setIsDebug();
     }
 
     //设备分辨率
@@ -59,6 +64,11 @@ public class BaseApplication extends Application {
         appSecret = "APPSECRET";
         appName = "APPNAME";
         appVersion = "APPVERSION";
+    }
+
+    //设置是否是Debug模式
+    protected boolean setIsDebug(){
+        return true;
     }
 
 }

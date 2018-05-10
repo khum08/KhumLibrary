@@ -1,5 +1,7 @@
 package com.khum.lib.global.dagger;
 
+import android.content.Context;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -15,4 +17,5 @@ import dagger.Component;
 @Singleton
 @Component(dependencies = ContextModule.class)
 public interface ContextComponent {
+    Context provideContext();
 }
