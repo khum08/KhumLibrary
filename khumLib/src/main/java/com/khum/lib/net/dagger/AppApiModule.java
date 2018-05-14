@@ -3,17 +3,20 @@ package com.khum.lib.net.dagger;
 import android.content.Context;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import com.khum.lib.global.DefaultApplication;
 import com.khum.lib.global.dagger.ContextModule;
 import com.khum.lib.net.dynamicproxy.ApiServiceHandler;
 import com.khum.lib.net.dynamicproxy.ApiServiceProxy;
 import com.khum.lib.net.interceptor.LogInterceptor;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -58,7 +61,11 @@ public abstract class AppApiModule<T> extends ContextModule {
     @Provides
     @Singleton
     public OkHttpClient provideOkHttpClient(){
+        Cache cache = new Cache(new File(DefaultApplication.mContext.getCacheDir(), "HttpCache"),
+                1024 * 1024 * 100);
         return new OkHttpClient.Builder()
+                .cache(cache)
+                .retryOnConnectionFailure(true)
                 .connectTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(DEFAULT_TIME_OUT,TimeUnit.SECONDS)
                 .writeTimeout(DEFAULT_TIME_OUT,TimeUnit.SECONDS)

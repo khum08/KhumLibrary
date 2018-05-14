@@ -2,7 +2,7 @@ package com.khum.lib.utils;
 
 import android.util.Log;
 
-import com.khum.lib.global.BaseApplication;
+import com.khum.lib.global.DefaultApplication;
 
 /**
  * <pre>
@@ -13,7 +13,7 @@ import com.khum.lib.global.BaseApplication;
  */
 public class LogUtils {
 
-    private static boolean isDebug = BaseApplication.isDebug;
+    private static boolean isDebug = DefaultApplication.isDebug;
 
     public static void v(String tag, String msg) {
         if (isDebug) {

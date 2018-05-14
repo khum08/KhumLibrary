@@ -1,7 +1,7 @@
 package com.khum.Demo.gobal;
 
 
-import com.khum.lib.global.BaseApplication;
+import com.khum.lib.global.DefaultApplication;
 
 /**
  * <pre>
@@ -10,7 +10,7 @@ import com.khum.lib.global.BaseApplication;
  *     desc   :
  * </pre>
  */
-public class ExampleApp extends BaseApplication {
+public class ExampleApp extends DefaultApplication {
 
     @Override
     protected void initAppInfo() {

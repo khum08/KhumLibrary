@@ -20,7 +20,7 @@ import com.khum.lib.utils.DeviceUtil;
  *                  setIsDebug()
  * </pre>
  */
-public class BaseApplication extends Application {
+public class DefaultApplication extends Application {
 
     //手机的宽高
     public static int SCREEN_WIDTH;
@@ -32,6 +32,7 @@ public class BaseApplication extends Application {
     public static String appName;
     public static String appVersion;
     //用于提供全局的Context对象
+    public static Context mContext;
     public static ContextComponent mContextComponent;
     public static boolean isDebug;
 
@@ -40,7 +41,9 @@ public class BaseApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         getDisplayMetrics(base);
+        mContext = getApplicationContext();
     }
+
 
     @Override
     public void onCreate() {
