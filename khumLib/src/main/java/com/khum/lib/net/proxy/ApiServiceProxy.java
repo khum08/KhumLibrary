@@ -1,4 +1,4 @@
-package com.khum.lib.net.dynamicproxy;
+package com.khum.lib.net.proxy;
 
 import android.content.Context;
 
@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
  * <pre>
  *     author : khum
  *     time   : 2018/5/10
- *     desc   :
+ *     desc   : 动态代理生成代理对象
  * </pre>
  */
 public class ApiServiceProxy {
@@ -28,7 +28,8 @@ public class ApiServiceProxy {
     public <T> T getProxyInstance(Class<T> tClass){
         T t = mRetrofit.create(tClass);
         mApiServiceHandler.setInvokeObject(t,mContext);
-        return (T)Proxy.newProxyInstance(tClass.getClassLoader(), new Class<?>[]{tClass}, mApiServiceHandler);
+        return (T)Proxy.newProxyInstance(tClass.getClassLoader(),
+                new Class<?>[]{tClass}, mApiServiceHandler);
     }
 
 

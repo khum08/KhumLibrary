@@ -13,7 +13,14 @@ import com.khum.lib.global.DefaultApplication;
 public class ExampleApp extends DefaultApplication {
 
     @Override
+    protected void initApiComponent() {
+
+    }
+
+    @Override
     protected void initAppInfo() {
         super.initAppInfo();
     }
+
+
 }

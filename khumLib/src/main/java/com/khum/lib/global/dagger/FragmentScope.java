@@ -17,5 +17,5 @@ import javax.inject.Scope;
 @Scope
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface PerFragment {
+public @interface FragmentScope {
 }

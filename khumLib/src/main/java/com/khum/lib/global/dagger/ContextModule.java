@@ -2,8 +2,6 @@ package com.khum.lib.global.dagger;
 
 import android.content.Context;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 
@@ -23,7 +21,7 @@ public class ContextModule {
     }
 
     @Provides
-    @Singleton
+    @ApplicationScope
     public Context provideContext(){
         return mContext;
     }

@@ -7,7 +7,7 @@ package com.khum.lib.net.model;
  *     desc   :
  * </pre>
  */
-public class NetWorkData<T> {
+public class Response<T> {
 
     private int code;
     private String message;

@@ -7,6 +7,8 @@ import android.util.DisplayMetrics;
 import com.khum.lib.global.dagger.ContextComponent;
 import com.khum.lib.global.dagger.ContextModule;
 import com.khum.lib.global.dagger.DaggerContextComponent;
+import com.khum.lib.net.dagger.BaseApiModule;
+import com.khum.lib.net.dagger.DaggerBaseApiComponent;
 import com.khum.lib.utils.DeviceUtil;
 
 
@@ -20,7 +22,7 @@ import com.khum.lib.utils.DeviceUtil;
  *                  setIsDebug()
  * </pre>
  */
-public class DefaultApplication extends Application {
+public abstract class DefaultApplication extends Application {
 
     //手机的宽高
     public static int SCREEN_WIDTH;
@@ -48,8 +50,10 @@ public class DefaultApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        DaggerContextComponent.builder().contextModule(new ContextModule(this)).build();
+        DaggerBaseApiComponent.builder().baseApiModule(new BaseApiModule()).build();
+        initApiComponent();
         initAppInfo();
-        mContextComponent = DaggerContextComponent.builder().contextModule(new ContextModule(this)).build();
         isDebug = setIsDebug();
     }
 
@@ -73,5 +77,7 @@ public class DefaultApplication extends Application {
     protected boolean setIsDebug(){
         return true;
     }
+
+    protected abstract void initApiComponent();
 
 }

@@ -2,8 +2,6 @@ package com.khum.lib.global.dagger;
 
 import android.content.Context;
 
-import javax.inject.Singleton;
-
 import dagger.Component;
 
 
@@ -14,8 +12,8 @@ import dagger.Component;
  *     desc   :
  * </pre>
  */
-@Singleton
-@Component(dependencies = ContextModule.class)
+@ApplicationScope
+@Component(modules = ContextModule.class)
 public interface ContextComponent {
-    Context provideContext();
+    Context provideContext(Context context);
 }

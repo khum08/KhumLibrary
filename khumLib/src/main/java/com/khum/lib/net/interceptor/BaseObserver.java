@@ -1,6 +1,6 @@
 package com.khum.lib.net.interceptor;
 
-import com.khum.lib.net.model.NetWorkData;
+import com.khum.lib.net.model.Response;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable;
  *     desc   :
  * </pre>
  */
-public abstract class BaseObserver<T> implements Observer<NetWorkData<T>> {
+public abstract class BaseObserver<T> implements Observer<Response<T>> {
 
     @Override
     public void onSubscribe(Disposable d) {
@@ -20,7 +20,7 @@ public abstract class BaseObserver<T> implements Observer<NetWorkData<T>> {
     }
 
     @Override
-    public void onNext(NetWorkData<T> tNetWorkData) {
+    public void onNext(Response<T> response) {
 
     }
 
